@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  max-width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding: 0px 5px;
+}
+
+:root {
+  --orange: rgb(253, 74, 19);
+  --primary: #ddd;
+  --dark: #7c7777be;
+  --white: #fff;
+  --black: #000;
+  --yellow: #ffe70b;
+}
+body {
+  /* font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; */
+  line-height: 2;
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  /* font-optical-sizing: auto; */
+  /* font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings: "slnt" 0; */
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+/* DESIGN PROPER */
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.nav .logo {
+  width: 50px;
+}
+
+.nav .navbar {
+  display: flex;
+  justify-self: flex-end;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav .navbar li {
+  padding: 0 0 0 3rem;
+}
+.nav .navbar li a:hover {
+  color: var(--orange);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 66% 33%;
+  gap: 20px;
+  align-items: start;
+}
+
+.grid-2 .right-grid {
+  display: grid;
+  grid-template-rows: 60% 40%;
+  gap: 20px;
+}
+
+.grid-2 .right-grid .g2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grid-2 .right-grid .g2 h1 {
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 3.5rem;
+}
+
+.grid-2 .right-grid .g2 .inner-grid-2 .btn {
+  margin-top: 20px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 0.5rem 2rem;
+  background-color: var(--orange);
+  color: white;
+  letter-spacing: 5px;
+}
+
+.grid-2 .right-grid .g2 .inner-grid-2 .btn:hover {
+  background-color: var(--black);
+  color: white;
+}
+
+.left-grid {
+  background-color: var(--black);
+  color: white;
+  padding: 20px;
+}
+
+.grid-2 .left-grid h1 {
+  height: 30px;
+}
+
+.left-grid .yellow {
+  color: var(--yellow);
+  font-size: 3rem;
+}
+
+.left-grid div h3 {
+  padding: 10px 0px;
+}
+.left-grid div h3:hover {
+  color: var(--yellow);
+  cursor: pointer;
+}
+
+.left-grid div p {
+  margin-bottom: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+.grid-3 .inner-grid3 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+}
+
+.grid-3 h2 {
+  color: var(--dark);
+  font-size: 28px;
+}
+
+.grid-3 h3:hover {
+  color: var(--orange);
+  cursor: pointer;
+}
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.side-menu {
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 70%;
+  top: 0;
+  right: 0;
+  background-color: white;
+  color: var(--dark);
+  z-index: 1000;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.side-menu.open {
+  display: block;
+  transform: translateX(0);
+}
+
+.side-menu .close-btn {
+  font-size: 60px;
+  position: absolute;
+  right: 20%;
+  text-align: left;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.side-menu .side-nav {
+  list-style: none;
+  padding: 0;
+  margin: 200px 0 0 20px;
+}
+
+.side-menu .side-nav li {
+  margin: 20px 0;
+}
+
+.side-menu .side-nav li a {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 20px;
+  display: block;
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 .right-grid {
+    grid-template-rows: auto;
+  }
+
+  .grid-2 .right-grid .g2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 .right-grid .g2 h1 {
+    font-size: 40px;
+    line-height: 3rem;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+/* Media query for mobile view */
+
+@media (max-width: 600px) {
+  .nav .navbar {
+    display: none;
+  }
+
+  .nav .hamburger {
+    display: flex;
+    justify-self: flex-end;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 .right-grid {
+    grid-template-rows: auto;
+  }
+
+  .grid-2 .right-grid .g2 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 .right-grid .g2 h1 {
+    font-size: 30px;
+    line-height: 2.5rem;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* .side-menu {
+    display: block;
+  } */
+}
